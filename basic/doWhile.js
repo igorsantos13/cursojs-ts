@@ -1,6 +1,6 @@
 //basicamente é a estrutura inversa do while convencional
 
-let numero = 0
+let numero = 0 //este seria o acumulador presente no reduce (ver em ../arrays)
 do{
     numero++ //aqui a variavel é atuliazada antes de ir para a tela
     
