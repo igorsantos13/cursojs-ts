@@ -51,6 +51,8 @@ ValidaCPF.prototype.criaDigito = function(cpfParcial) {
 };
 
 ValidaCPF.prototype.isSequencia = function() {
+  //se o valor do index 0 se repetir por todo
+  //o array significa que é uma sequencia
   const sequencia = this.cpfLimpo[0].repeat(this.cpfLimpo.length);
   return sequencia === this.cpfLimpo;
 };

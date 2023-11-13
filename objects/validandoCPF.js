@@ -1,17 +1,10 @@
-//ggs =)
-let cpf = '705.484.450-52';
-let cpf2 = '123.761.931-09';
-let cpf3 = '421.991.091-35'
-let cpf4 = '440.962.091-63'
-let cpf5 = '999.999.999-99';
-
 function ValidaCPF(cpf){
+    if(cpf == '') return
     const getCPF = primeiraConta(cpf) //toda nossa operacao    
     const cpfRecebido = formatarCPF(cpf) //cpf recebido como string
     const arrayCpfRecebido = Array.from(cpfRecebido)
 
     numberCpfRecebido = arrayCpfRecebido.map(num => Number(num))
-    // console.log(stringGetCPF)
     
     const JSONcpf = JSON.stringify(getCPF)
     const stringCPF = JSONcpf.toString()
@@ -29,6 +22,11 @@ function ValidaCPF(cpf){
 function primeiraConta(cpf){
     let cpfLimpo = formatarCPF(cpf)
     let cpfArray = Array.from(cpfLimpo)
+
+    //checa se o cpf possui uma sequencia de mesmo numero do inicio ao fim
+    const sequencia = cpfArray.every(num => num === cpfArray[0])
+    if(sequencia) return 'CPF Invalido'
+
     cpfArray.pop()
     cpfArray.pop()
     
@@ -47,7 +45,6 @@ function primeiraConta(cpf){
 }
 
 function segundaConta(novoCPF){
-    // console.log(novoCPF.map(num => typeof num))
     let numero = 11
 
     const multiplicar = multiplicaNumerosCPF(novoCPF, numero)
@@ -57,7 +54,6 @@ function segundaConta(novoCPF){
     const devolverNovoCPF = novoCPF
     devolverNovoCPF.push(segundoResultadoMagico)
 
-    // console.log('ALOOO', devolverNovoCPF)
     return devolverNovoCPF
 
 }
@@ -83,8 +79,15 @@ function somaNumerosCPF(cpf){
     return cpf.reduce((prev, curr) => prev + curr)
 }
 
+let cpf = '705.484.450-52';
+let cpf2 = '123.761.931-09';
+let cpf3 = '421.991.091-35'
+let cpf4 = ''
+let cpf5 = '999.999.999-99';
+
 console.log(ValidaCPF(cpf))
 console.log(ValidaCPF(cpf2))
 console.log(ValidaCPF(cpf3))
 console.log(ValidaCPF(cpf4))
 console.log(ValidaCPF(cpf5))
+//ggs =)
