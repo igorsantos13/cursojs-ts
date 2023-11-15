@@ -2,6 +2,10 @@ function Produto(nome, preco, estoque){
     this.nome = nome
     this.preco = preco
 
+    //cria-se esssa variavel para que
+    //ao chamar o this.estoque no get
+    //nao se crie um loop (pois this.estoque === get estoque())
+    //ou quase isso laranjinhaaa
     let estoquePrivado = estoque
     Object.defineProperty(this, 'estoque', {
         enumerable: true, //mostra a variavel

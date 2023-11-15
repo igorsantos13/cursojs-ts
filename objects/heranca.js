@@ -6,7 +6,9 @@ function Produto(nome, preco){
     this.nome = nome
     this.preco = preco
 }
-
+//ao fazer isso adicionamos os metodos ao prototype
+//assim nao causando problemas de performance
+//dado que so faz referencia a um prototype
 Produto.prototype.desconto = function(porcentagem){
     this.preco = this.preco - (this.preco * (porcentagem / 100))
 }
@@ -16,13 +18,14 @@ Produto.prototype.aumento = function(porcentagem){
 }
 
 function Camiseta(nome, preco, cor){
+    //"liga" para o objeto pai Produto
     Produto.call(this, nome, preco)
     this.cor = cor //cria uma propriedade independente de Produto
 }
 
 //cria um objeto vazio e adiciona o prototype de produto para obj Camiseta
 Camiseta.prototype = Object.create(Produto.prototype)
-//faz com que o construtor de Camiseta seja seu proprio construor, inves de herdar de produto
+//Faz com que o constructor "aponte" para o lugar certo, em vez do pai (Produto)
 Camiseta.prototype.constructor = Camiseta;
 
 //Re-escrevendo o metodo de aumento
