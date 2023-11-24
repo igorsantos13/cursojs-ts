@@ -15,3 +15,7 @@ app.listen(3000, ()=>{
   console.log('Acesse em http://localhost:3000')
   console.log('servidor executando na porta 3000')
 })
+
+//execute o app e acesse /text.txt
+//nele o express.static lê o que tem dentro
+//da pasta public e deixa disponivel para acesso

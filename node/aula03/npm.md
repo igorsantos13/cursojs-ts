@@ -37,7 +37,7 @@
 
 
 ## Informações uteis do npm
-Todo pacote cuja versão possui um "^" significa que aquele pacote pode ser atualizado ex: "express": "^4.17.1" =/= "4.17.1" (npm i pacote -E) que não pode ser alterada
+Todo pacote cuja versão possui um "^" significa que aquele pacote pode ser atualizado (apenas minors e patches, leia para mais) ex: "express": "^4.17.1" =/= "4.17.1" (npm i pacote -E) que não pode ser alterada
 
 
 ## Como funciona as versões dos pacotes?
