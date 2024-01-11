@@ -9,7 +9,12 @@ export function concatStrings(...args: string[]) {
   return args.join('');
 }
 
+export function toUpperCase(...args: Array<string>): string[] {
+  return args.map((arg) => arg.toUpperCase());
+}
+
 const result = multiply(1, 2, 34, 52);
 const joinStrings = concatStrings('xdd', 'vapo', 'fazoL');
+const stringToUpperCase = toUpperCase('spfc', 'mclaren');
 
-console.log(result, joinStrings);
+console.log(result, joinStrings, stringToUpperCase);
